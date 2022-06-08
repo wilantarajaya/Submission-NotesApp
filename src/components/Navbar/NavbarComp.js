@@ -2,13 +2,15 @@ import React from "react";
 import { Container, Navbar } from "react-bootstrap";
 import SearchBar from "./SearchBar";
 
-export default function NavbarComp() {
+export default function NavbarComp({ onSearch }) {
   return (
     <>
-      <Navbar expand="lg" variant="light" bg="light">
+      <Navbar expand="lg" className="navbar sticky-nav">
         <Container>
-          <Navbar.Brand>Personal Notes</Navbar.Brand>
-          <SearchBar />
+          <Navbar.Brand>
+            <h3>Personal Notes</h3>
+          </Navbar.Brand>
+          <SearchBar onSearch={onSearch} />
         </Container>
       </Navbar>
     </>
